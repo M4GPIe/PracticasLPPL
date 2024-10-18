@@ -17,16 +17,19 @@
 
 /*REGex*/
 
+digito [0-9]
+entero {digito}+ 
+letra [a-zA-Z] 
 delimitador     [ \t\n]+
-identificador   ^[A-Za-z_]+$
-contante        \b\d+\.?\d*|\.\d+\b
+identificador  {letra}({letra}|{digito}|_)* 
+constante        {entero}|{entero}.{entero}|{entero}.|.{entero}  
 comentario      \/\/.*$
 
 %%
 
 {delimitador}       {if (verbosidad) ECHO ;}
 {identificador}     {retornar (ID_) ;}
-{contante}          {retornar (CTE_) ;}
+{constante}          {retornar (CTE_) ;}
 {comentario}        {if (verbosidad) ECHO ;}
 
 "+"             { retornar (ADD_) ;}
