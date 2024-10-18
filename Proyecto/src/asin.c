@@ -67,12 +67,12 @@
 
 
 /* First part of user prologue.  */
-#line 5 "asin.y"
+#line 5 "bison/asin.y"
 
+#include <stdio.h>
 #include "header.h"
-#include "string.h"
 
-#line 76 "../executables/asin.c"
+#line 76 "asin.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -1223,7 +1223,7 @@ yyreduce:
   switch (yyn)
     {
 
-#line 1227 "../executables/asin.c"
+#line 1227 "asin.c"
 
       default: break;
     }
@@ -1416,5 +1416,5 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 96 "asin.y"
+#line 96 "bison/asin.y"
 

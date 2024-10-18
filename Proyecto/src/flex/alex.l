@@ -5,7 +5,7 @@
 %{
 #include "header.h"
 #include "asin.h"
-#include "string.h"
+#include <stdio.h>
 
 #define  retornar(x) {if (verbosidad) ECHO ; return (x) ; }
 %}
@@ -48,7 +48,7 @@ comentario      \/\/.*$
 ")"             { retornar (PARCL_) ; }
 "{"             { retornar (KEYOP_) ; }
 "}"             { retornar (KEYCL_) ; }
-"["             { retornar (BARCKOP_) ; }
+"["             { retornar (BRACKOP_) ; }
 "]"             { retornar (BRACKCL_) ; }
 ","             { retornar (COMMA_) ; } 
 ";"             { retornar (SEMIC_) ; }

@@ -3,8 +3,8 @@
 /*****************************************************************************/
 
 %{
+#include <stdio.h>
 #include "header.h"
-#include "string.h"
 %}
 
 //operadores
