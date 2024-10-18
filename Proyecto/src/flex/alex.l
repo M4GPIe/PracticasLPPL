@@ -27,6 +27,17 @@ comentario      \/\/.*$
 
 %%
 
+"true"             { retornar (TRUE_) ; }
+"false"             { retornar (FALSE_) ; }
+"int"             { retornar (INT_) ; }
+"bool"             { retornar (BOOL_) ; }
+"return"             { retornar (RETURN_) ; }
+"print"             { retornar (PRINT_) ; }
+"if"             { retornar (IF_) ; }
+"else"             { retornar (ELSE_) ; }
+"for"             { retornar (FOR_) ; }
+"read"             { retornar (READ_) ; }
+
 {delimitador}       {if (verbosidad) ECHO ;}
 {identificador}     {retornar (ID_) ;}
 {constante}          {retornar (CTE_) ;}
@@ -55,5 +66,6 @@ comentario      \/\/.*$
 "]"             { retornar (BRACKCL_) ; }
 ","             { retornar (COMMA_) ; } 
 ";"             { retornar (SEMIC_) ; }
+
 .				{ yyerror("Caracter desconocido") ;}
 %%
