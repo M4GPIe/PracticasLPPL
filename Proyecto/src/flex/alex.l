@@ -22,10 +22,12 @@ entero {digito}+
 letra [a-zA-Z] 
 delimitador     [ \t\n]+
 identificador  {letra}({letra}|{digito}|_)* 
-constante        {entero}|{entero}.{entero}|{entero}.|.{entero}  
+constante        {entero}|{entero}"."{entero}|{entero}"."|"."{entero}  
 comentario      \/\/.*$
 
 %%
+{comentario}        {if (verbosidad) ECHO ;}
+{delimitador}       {if (verbosidad) ECHO ;}
 
 "true"             { retornar (TRUE_) ; }
 "false"             { retornar (FALSE_) ; }
@@ -38,10 +40,8 @@ comentario      \/\/.*$
 "for"             { retornar (FOR_) ; }
 "read"             { retornar (READ_) ; }
 
-{delimitador}       {if (verbosidad) ECHO ;}
 {identificador}     {retornar (ID_) ;}
 {constante}          {retornar (CTE_) ;}
-{comentario}        {if (verbosidad) ECHO ;}
 
 "+"             { retornar (ADD_) ;}
 "-"             { retornar (SUB_) ; }
