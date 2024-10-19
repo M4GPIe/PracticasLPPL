@@ -26,7 +26,7 @@ constante        {entero}|{entero}"."{entero}|{entero}"."|"."{entero}
 comentario      \/\/.*$
 
 %%
-"\n"        {if (verbosidad) ECHO ; fprintf(stdout,"%3d.- ", yylineno);}
+"\n"                {if (verbosidad) { ECHO ; fprintf(stdout,"%3d.- ", yylineno);}}
 {comentario}        {if (verbosidad) ECHO ;}
 {delimitador}       {if (verbosidad) ECHO ;}
 

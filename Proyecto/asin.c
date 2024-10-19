@@ -67,7 +67,7 @@
 
 
 /* First part of user prologue.  */
-#line 5 "bison/asin.y"
+#line 5 "src/asin.y"
 
 #include <stdio.h>
 #include "header.h"
@@ -1416,5 +1416,5 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 96 "bison/asin.y"
+#line 96 "src/asin.y"
 
